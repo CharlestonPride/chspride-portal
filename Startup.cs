@@ -1,3 +1,6 @@
+using CharlestonPride.Portal.Models;
+using Cosmonaut;
+using Cosmonaut.Extensions.Microsoft.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +31,8 @@ namespace CharlestonPride.Portal
       {
         configuration.RootPath = "client/build";
       });
+
+      SetupCosmos(services);
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +71,17 @@ namespace CharlestonPride.Portal
           spa.UseReactDevelopmentServer(npmScript: "start");
         }
       });
+    }
+    private void SetupCosmos(IServiceCollection services)
+    {
+      var databaseName = Configuration.GetValue<string>("CosmosDb:DatabaseName");
+      var endpointUrl = Configuration.GetValue<string>("CosmosDb:Account");
+      var authKey = Configuration.GetValue<string>("CosmosDb:AuthKey");
+      var settings = new CosmosStoreSettings(databaseName, endpointUrl, authKey);
+
+      //Register stores here
+      services.AddCosmosStore<Director>(settings);
+      services.AddCosmosStore<Sponsor>(settings);
     }
   }
 }
