@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 
 namespace CharlestonPride.Portal.Controllers
 {
@@ -34,6 +35,17 @@ namespace CharlestonPride.Portal.Controllers
     {
       var result = await CosmosStore.Query(Options).ToListAsync();
       return result.OrderByDescending(d => d.Executive).ThenBy(d => d.Order).ThenBy(d => d.DateElectedToBoard).ToList();
+    }
+
+    [HttpPost]
+    public IActionResult Post([FromBody] JObject body)
+    {
+
+      if (body == null)
+      {
+        return BadRequest();
+      }
+      return new OkResult();
     }
   }
 

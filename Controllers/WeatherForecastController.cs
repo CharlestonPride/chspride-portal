@@ -35,5 +35,16 @@ namespace CharlestonPride.Portal.Controllers
       })
       .ToArray();
     }
+
+    [HttpPost]
+    public IActionResult Post([FromBody] string body)
+    {
+
+      if (String.IsNullOrEmpty(body))
+      {
+        return BadRequest();
+      }
+      return new OkResult();
+    }
   }
 }
