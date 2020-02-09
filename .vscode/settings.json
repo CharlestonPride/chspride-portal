@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/d5aeb21a-02ba-43b2-abf8-45280dabd650/resourceGroups/chspride-rg-east/providers/Microsoft.Web/sites/chspride-portal",
+  "appService.deploySubpath": "bin/Release/netcoreapp3.0/publish"
+}
