@@ -19,7 +19,7 @@ import {
   CheckboxInput
 } from "components/Forms/FormInputs";
 
-class AddToastSponsor extends Component {
+class EditToastSponsor extends Component {
   render() {
     return (
       <>
@@ -32,34 +32,26 @@ class AddToastSponsor extends Component {
                 <CardBody>
                   <Formik
                     initialValues={{
-                      firstName: "",
-                      lastName: "",
-                      email: "",
-                      acceptedTerms: false, // added for our checkbox
-                      jobType: "" // added for our select
+                      name: "",
+                      sponsorshipLevel: ""
                     }}
                     validationSchema={Yup.object({
-                      firstName: Yup.string()
-                        .max(15, "Must be 15 characters or less")
-                        .required("Required"),
-                      lastName: Yup.string()
-                        .max(20, "Must be 20 characters or less")
-                        .required("Required"),
-                      email: Yup.string()
-                        .email("Invalid email addresss`")
-                        .required("Required"),
-                      acceptedTerms: Yup.boolean()
-                        .required("Required")
-                        .oneOf(
-                          [true],
-                          "You must accept the terms and conditions."
-                        ),
-                      jobType: Yup.string()
+                      name: Yup.string().required("Required"),
+                      sponsorshipLevel: Yup.string()
                         // specify the set of valid values for job type
                         // @see http://bit.ly/yup-mixed-oneOf
                         .oneOf(
-                          ["designer", "development", "product", "other"],
-                          "Invalid Job Type"
+                          [
+                            "presenting",
+                            "promoting",
+                            "supporting",
+                            "partnering",
+                            "wristband",
+                            "lounge",
+                            "tshirt",
+                            "bag"
+                          ],
+                          "Invalid Sponsorship Level"
                         )
                         .required("Required")
                     })}
@@ -85,29 +77,24 @@ class AddToastSponsor extends Component {
                   >
                     <Form id="myform">
                       <TextInput
-                        label="First Name"
-                        name="firstName"
+                        label="Sponsor Name"
+                        name="name"
                         type="text"
-                        placeholder="Jane"
+                        placeholder="Some Company"
                       />
-                      <TextInput
-                        label="Last Name"
-                        name="lastName"
-                        type="text"
-                        placeholder="Doe"
-                      />
-                      <TextInput
-                        label="Email Address"
-                        name="email"
-                        type="email"
-                        placeholder="jane@formik.com"
-                      />
-                      <SelectInput label="Job Type" name="jobType">
-                        <option value="">Select a job type</option>
-                        <option value="designer">Designer</option>
-                        <option value="development">Developer</option>
-                        <option value="product">Product Manager</option>
-                        <option value="other">Other</option>
+                      <SelectInput
+                        label="Sponsorship Level"
+                        name="sponsorshipLevel"
+                      >
+                        <option value="">Select a sponsorship level</option>
+                        <option value="presenting">Presenting</option>
+                        <option value="promoting">Promoting</option>
+                        <option value="supporting">Supporting</option>
+                        <option value="lounge">VIP Lounge</option>
+                        <option value="wristband">Wristband</option>
+                        <option value="tshirt">Volunteer Shirt </option>
+                        <option value="bag">Commemorative Bag </option>
+                        <option value="partnering">Partnering</option>
                       </SelectInput>
                       <CheckboxInput name="acceptedTerms">
                         I accept the terms and conditions
@@ -129,4 +116,4 @@ class AddToastSponsor extends Component {
   }
 }
 
-export default AddToastSponsor;
+export default EditToastSponsor;

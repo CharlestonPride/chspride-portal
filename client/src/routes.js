@@ -23,7 +23,7 @@ import Login from "views/examples/Login.jsx";
 import Tables from "views/examples/Tables.jsx";
 import Icons from "views/examples/Icons.jsx";
 import Weather from "views/examples/Weather.jsx";
-import AddToastSponsor from "views/toast/AddToastSponsor";
+import EditToastSponsor from "views/toast/EditToastSponsor";
 
 var routes = [
   {
@@ -72,7 +72,7 @@ var routes = [
     path: "/toast",
     name: "Sponsor",
     icon: "ni ni-bullet-list-67 text-red",
-    component: AddToastSponsor,
+    component: EditToastSponsor,
     layout: "/admin"
   },
   {

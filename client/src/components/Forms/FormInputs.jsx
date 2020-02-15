@@ -64,3 +64,26 @@ export const SelectInput = ({ label, ...props }) => {
     </>
   );
 };
+
+export const TextAreaInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <>
+      <FormGroup>
+        <Label for={props.id || props.name}>{label}</Label>
+        <Input
+          {...field}
+          {...props}
+          type="textarea"
+          className={classNames({
+            "is-invalid": meta.touched && meta.error
+          })}
+        />
+        {meta.touched && meta.error ? (
+          <div className="invalid-feedback">{meta.error}</div>
+        ) : null}
+      </FormGroup>
+    </>
+  );
+};
