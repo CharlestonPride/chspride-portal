@@ -12,7 +12,14 @@ import {
   faSearch,
   faEllipsisV,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faDonate,
+  faHandHoldingUsd,
+  faImage,
+  faStore,
+  faCogs,
+  faTrophy,
+  faCocktail
 } from "@fortawesome/free-solid-svg-icons";
 
 import "assets/vendor/nucleo/css/nucleo.css";
@@ -30,7 +37,14 @@ library.add(
   faSearch,
   faEllipsisV,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faDonate,
+  faHandHoldingUsd,
+  faImage,
+  faStore,
+  faCogs,
+  faTrophy,
+  faCocktail
 );
 
 ReactDOM.render(

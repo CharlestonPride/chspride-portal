@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink as NavLinkRRD, Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
-
-// reactstrap components
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Collapse,
   NavbarBrand,
@@ -53,7 +52,10 @@ class Sidebar extends React.Component {
               onClick={this.closeCollapse}
               activeClassName="active"
             >
-              <i className={prop.icon} />
+              <FontAwesomeIcon
+                icon={prop.icon}
+                className={"text-" + prop.color}
+              />
               {prop.name}
             </NavLink>
           </NavItem>
@@ -134,7 +136,10 @@ class Sidebar extends React.Component {
             {/* Divider */}
             <hr className="my-3" />
             {/* Heading */}
-            <h6 className="navbar-heading text-muted">Toast to Equality</h6>
+            <h3 className="navbar-heading">
+              Toast to Equality{" "}
+              <FontAwesomeIcon icon="cocktail" className="text-orange" />
+            </h3>
             {/* Navigation */}
             <Nav className="mb-md-3" navbar>
               {this.createLinks(routes, "toast")}

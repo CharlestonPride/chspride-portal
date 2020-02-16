@@ -11,37 +11,43 @@ var routes = [
   {
     path: "/index",
     name: "Dashboard",
-    icon: "ni ni-tv-2 text-primary",
+    icon: "chart-bar",
+    color: "green",
     component: Index
   },
   {
     path: "/icons",
     name: "Board of Directors",
-    icon: "ni ni-planet text-blue",
+    icon: "users",
+    color: "blue",
     component: Icons
   },
   {
     path: "/maps",
     name: "Sponsors",
-    icon: "ni ni-pin-3 text-orange",
+    icon: "hand-holding-usd",
+    color: "orange",
     component: Maps
   },
   {
     path: "/user-profile",
     name: "Pride Guide Ads",
-    icon: "ni ni-single-02 text-yellow",
+    icon: "image",
+    color: "yellow",
     component: Profile
   },
   {
     path: "/tables",
     name: "Vendors",
-    icon: "ni ni-bullet-list-67 text-red",
+    icon: "store",
+    color: "pink",
     component: Tables
   },
   {
     path: "/weather",
     name: "Settings",
-    icon: "ni ni-bullet-list-67 text-red",
+    icon: "cogs",
+    color: "red",
     component: Weather
   },
   {
@@ -51,14 +57,24 @@ var routes = [
   {
     path: "/toast/sponsors",
     name: "Sponsors",
-    icon: "ni ni-bullet-list-67 text-red",
+    icon: "hand-holding-usd",
+    color: "green",
+    category: "toast",
+    component: ListToastSponsor
+  },
+  {
+    path: "/toast/sponsors",
+    name: "Competitors",
+    icon: "trophy",
+    color: "indigo",
     category: "toast",
     component: ListToastSponsor
   },
   {
     path: "/toast/settings",
     name: "Settings",
-    icon: "ni ni-bullet-list-67 text-red",
+    icon: "cogs",
+    color: "info",
     category: "toast",
     component: ListToastSponsor
   }

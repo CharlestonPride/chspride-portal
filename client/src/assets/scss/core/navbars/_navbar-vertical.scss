@@ -77,7 +77,8 @@
 
       // Icon
 
-      > i {
+      > i,
+      svg {
         min-width: $navbar-icon-min-width;
         font-size: 0.9375rem;
         line-height: ($font-size-base * $line-height-base);
