@@ -1,93 +1,66 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Index from "views/Index.jsx";
 import Profile from "views/examples/Profile.jsx";
 import Maps from "views/examples/Maps.jsx";
-import Register from "views/examples/Register.jsx";
-import Login from "views/examples/Login.jsx";
 import Tables from "views/examples/Tables.jsx";
 import Icons from "views/examples/Icons.jsx";
 import Weather from "views/examples/Weather.jsx";
-import EditToastSponsor from "views/toast/EditToastSponsor";
+import ListToastSponsor from "views/toast/sponsors/List";
+import EditToastSponsor from "views/toast/sponsors/Edit";
 
 var routes = [
   {
     path: "/index",
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
-    component: Index,
-    layout: "/admin"
+    component: Index
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "Board of Directors",
     icon: "ni ni-planet text-blue",
-    component: Icons,
-    layout: "/admin"
+    component: Icons
   },
   {
     path: "/maps",
-    name: "Maps",
+    name: "Sponsors",
     icon: "ni ni-pin-3 text-orange",
-    component: Maps,
-    layout: "/admin"
+    component: Maps
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Pride Guide Ads",
     icon: "ni ni-single-02 text-yellow",
-    component: Profile,
-    layout: "/admin"
+    component: Profile
   },
   {
     path: "/tables",
-    name: "Tables",
+    name: "Vendors",
     icon: "ni ni-bullet-list-67 text-red",
-    component: Tables,
-    layout: "/admin"
+    component: Tables
   },
   {
     path: "/weather",
-    name: "Weather",
+    name: "Settings",
     icon: "ni ni-bullet-list-67 text-red",
-    component: Weather,
-    layout: "/admin"
+    component: Weather
   },
   {
-    path: "/toast",
-    name: "Sponsor",
+    path: "/toast/sponsors/edit",
+    component: EditToastSponsor
+  },
+  {
+    path: "/toast/sponsors",
+    name: "Sponsors",
     icon: "ni ni-bullet-list-67 text-red",
-    component: EditToastSponsor,
-    layout: "/admin"
+    category: "toast",
+    component: ListToastSponsor
   },
   {
-    path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: Login,
-    layout: "/auth"
-  },
-  {
-    path: "/register",
-    name: "Register",
-    icon: "ni ni-circle-08 text-pink",
-    component: Register,
-    layout: "/auth"
+    path: "/toast/settings",
+    name: "Settings",
+    icon: "ni ni-bullet-list-67 text-red",
+    category: "toast",
+    component: ListToastSponsor
   }
 ];
 export default routes;
