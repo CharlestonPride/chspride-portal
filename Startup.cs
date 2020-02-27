@@ -88,6 +88,7 @@ namespace CharlestonPride.Portal
       //Register stores here
       services.AddCosmosStore<Director>(settings);
       services.AddCosmosStore<Sponsor>(settings);
+      services.AddCosmosStore<BrandingSponsorship>(settings);
     }
   }
 }
