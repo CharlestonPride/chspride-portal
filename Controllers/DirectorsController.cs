@@ -1,51 +1,21 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CharlestonPride.Portal.Models;
 using Cosmonaut;
-using Cosmonaut.Extensions;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Documents;
-using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
 
 namespace CharlestonPride.Portal.Controllers
 {
-  [ApiController]
-  [Route("api/[controller]")]
-  public class DirectorsController : ControllerBase
-  {
+  
+  public class DirectorsController : CosmosEntityBaseController<Director> {
+    public DirectorsController(ILogger<Director> logger, ICosmosStore<Director> cosmosStore) 
+      : base(logger, cosmosStore, Director.EnvironmentId) { }
 
-    private const string EnvironmentId = "chspride";
-    private readonly ILogger<DirectorsController> Logger;
-    private readonly ICosmosStore<Director> CosmosStore;
-    private FeedOptions Options;
-
-    public DirectorsController(ILogger<DirectorsController> logger, ICosmosStore<Director> cosmosStore)
+    public override async Task<IEnumerable<Director>> GetAsync()
     {
-      Logger = logger;
-      CosmosStore = cosmosStore;
-      Options = new FeedOptions { PartitionKey = new PartitionKey(EnvironmentId) };
-    }
-
-    [HttpGet]
-    public async Task<IEnumerable<Director>> GetAsync()
-    {
-      var result = await CosmosStore.Query(Options).ToListAsync();
+      var result = await base.GetAsync();
       return result.OrderByDescending(d => d.Executive).ThenBy(d => d.Order).ThenBy(d => d.DateElectedToBoard).ToList();
-    }
-
-    [HttpPost]
-    public IActionResult Post([FromBody] JObject body)
-    {
-
-      if (body == null)
-      {
-        return BadRequest();
-      }
-      return new OkResult();
     }
   }
 

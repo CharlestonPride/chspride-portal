@@ -10,6 +10,8 @@ namespace CharlestonPride.Portal.Models
   [CosmosCollection("Directors")]
   public class Director : CosmosEntity
   {
+    public const string EnvironmentId = "chspride";
+    
     [JsonProperty("envId")]
     [CosmosPartitionKey]
     public string EnvId { get; set; }
