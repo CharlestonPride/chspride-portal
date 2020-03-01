@@ -382,6 +382,154 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "eTapestry Settings",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}{id}",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}{{new}}",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enable",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}{id}/enable",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}{id}"
+							],
+							"path": [
+								"enable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{etapestrySettings}}{id}/disable",
+							"host": [
+								"{{portalBaseUrl}}{{etapestrySettings}}{id}"
+							],
+							"path": [
+								"disable"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Sponsors",
 			"item": [
 				{
@@ -1204,69 +1352,75 @@
 	],
 	"variable": [
 		{
-			"id": "5baafdbc-7356-4d6e-97d7-501c236a4f6a",
+			"id": "1decd1e6-db27-4a7b-96f5-f81ae5889cad",
 			"key": "portalBaseUrl",
 			"value": "https://localhost:5001/api/",
 			"type": "string"
 		},
 		{
-			"id": "af76ec14-5473-4616-8413-6797cc03ee02",
+			"id": "ff45c47c-b910-4513-8aa3-a4337b8d7e26",
 			"key": "toastBaseUrl",
 			"value": "https://localhost:5001/api/toast/",
 			"type": "string"
 		},
 		{
-			"id": "f48ae5f4-2c95-47eb-9760-d9a58d794c60",
+			"id": "f5964096-0fd3-4538-aa66-78d8eb6242ba",
 			"key": "new",
 			"value": "new",
 			"type": "string"
 		},
 		{
-			"id": "85c199a6-11a6-43a5-973a-e6c6508ca59d",
+			"id": "20778191-c501-434b-bb5e-8f6be21a1e39",
 			"key": "brandingSponsorships",
 			"value": "brandingsponsorships/",
 			"type": "string"
 		},
 		{
-			"id": "b372f434-8ae2-4aee-a018-c9f1075a718c",
+			"id": "eb19b890-bcc9-4788-9a28-00366a9bb7eb",
 			"key": "directors",
 			"value": "directors/",
 			"type": "string"
 		},
 		{
-			"id": "1beb05a1-2543-4326-a0d2-e9dbe81cd4cd",
+			"id": "c0186af6-402d-418b-ab1c-f70f1dd1fcbb",
 			"key": "sponsors",
 			"value": "sponsors/",
 			"type": "string"
 		},
 		{
-			"id": "52a0f537-8e8d-4194-910f-7964fa9d1d8f",
+			"id": "a4ed7571-ee97-4821-a623-52e362d9afe9",
 			"key": "sponsorships",
 			"value": "sponsorships/",
 			"type": "string"
 		},
 		{
-			"id": "8e8f2bbc-fc0d-469c-864d-e49ba61aa6c4",
+			"id": "b1eff1dd-adb4-4d3d-a58a-ecf1b6d635a5",
 			"key": "settings",
 			"value": "settings/",
 			"type": "string"
 		},
 		{
-			"id": "08d55661-4699-48cd-a3c8-77b7df9763e5",
+			"id": "ae5aee4c-e463-459e-8ad4-24e79f3e467d",
 			"key": "contenders",
 			"value": "contenders/",
 			"type": "string"
 		},
 		{
-			"id": "d47565ed-fc9f-4645-befd-3874b584f935",
+			"id": "cd0ad9e2-cb3b-4ec0-b200-9bc57c2e6f14",
 			"key": "foodTrucks",
 			"value": "foodtrucks",
 			"type": "string"
 		},
 		{
-			"id": "fae9f8b8-3a32-48fc-b903-e37e3bfb85ab",
+			"id": "399c9b3e-01f4-4b21-a060-72410121f4a2",
 			"key": "liquors",
 			"value": "liquors",
+			"type": "string"
+		},
+		{
+			"id": "97efe1c8-3d7b-41d3-bca1-ffad33612aaa",
+			"key": "etapestrySettings",
+			"value": "etapestrySettings/",
 			"type": "string"
 		}
 	],

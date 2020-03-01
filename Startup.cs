@@ -110,6 +110,7 @@ namespace CharlestonPride.Portal
       services.AddCosmosStore<Sponsorship>(settings);
       services.AddCosmosStore<Setting>(settings);
       services.AddCosmosStore<Advertisement>(settings);
+      services.AddCosmosStore<EtapesterySetting>(settings);
       services.AddCosmosStore<Contender>(settings);
       services.AddCosmosStore<FoodTruck>(settings);
       services.AddCosmosStore<Liquor>(settings);
