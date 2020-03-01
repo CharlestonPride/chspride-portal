@@ -1,0 +1,1274 @@
+{
+	"info": {
+		"_postman_id": "80486b47-b636-4fd3-826b-101ef07700b5",
+		"name": "Portal API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BrandingSponsorships",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}{id}",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}{{new}}",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EnableById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}{id}/enable",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}{id}"
+							],
+							"path": [
+								"enable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DisableById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{brandingSponsorships}}{id}/disable",
+							"host": [
+								"{{portalBaseUrl}}{{brandingSponsorships}}{id}"
+							],
+							"path": [
+								"disable"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Directors",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{directors}}",
+							"host": [
+								"{{portalBaseUrl}}{{directors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{directors}}{id}",
+							"host": [
+								"{{portalBaseUrl}}{{directors}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{directors}}{{new}}",
+							"host": [
+								"{{portalBaseUrl}}{{directors}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{portalBaseUrl}}{{directors}}",
+							"host": [
+								"{{portalBaseUrl}}{{directors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{directors}}",
+							"host": [
+								"{{portalBaseUrl}}{{directors}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{settings}}",
+							"host": [
+								"{{portalBaseUrl}}{{settings}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{settings}}{id}",
+							"host": [
+								"{{portalBaseUrl}}{{settings}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{settings}}{{new}}",
+							"host": [
+								"{{portalBaseUrl}}{{settings}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{portalBaseUrl}}{{settings}}",
+							"host": [
+								"{{portalBaseUrl}}{{settings}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{settings}}",
+							"host": [
+								"{{portalBaseUrl}}{{settings}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sponsors",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsors}}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsors}}{id}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsors}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsors}}{{new}}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsors}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsors}}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{sponsors}}",
+							"host": [
+								"{{baseUrl}}{{sponsors}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sponsorships",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsorships}}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsorships}}{id}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsorships}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsorships}}{{new}}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsorships}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{portalBaseUrl}}{{sponsorships}}",
+							"host": [
+								"{{portalBaseUrl}}{{sponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{sponsorships}}",
+							"host": [
+								"{{baseUrl}}{{sponsorships}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Toast Sponsors",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsors}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsors}}{id}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsors}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsors}}{{new}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsors}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsors}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsors}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsors}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Toast Sponsorships",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsorships}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsorships}}{id}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsorships}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsorships}}{{new}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsorships}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsorships}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsorships}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{sponsorships}}",
+							"host": [
+								"{{toastBaseUrl}}{{sponsorships}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Toast Contenders",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{contenders}}",
+							"host": [
+								"{{toastBaseUrl}}{{contenders}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{contenders}}{id}",
+							"host": [
+								"{{toastBaseUrl}}{{contenders}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{contenders}}{{new}}",
+							"host": [
+								"{{toastBaseUrl}}{{contenders}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{toastBaseUrl}}{{contenders}}",
+							"host": [
+								"{{toastBaseUrl}}{{contenders}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{contenders}}",
+							"host": [
+								"{{toastBaseUrl}}{{contenders}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Toast Liquors",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{liquors}}",
+							"host": [
+								"{{toastBaseUrl}}{{liquors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{liquors}}{id}",
+							"host": [
+								"{{toastBaseUrl}}{{liquors}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{liquors}}{{new}}",
+							"host": [
+								"{{toastBaseUrl}}{{liquors}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{toastBaseUrl}}{{liquors}}",
+							"host": [
+								"{{toastBaseUrl}}{{liquors}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{liquors}}",
+							"host": [
+								"{{toastBaseUrl}}{{liquors}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Toast Food Trucks",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{foodTrucks}}",
+							"host": [
+								"{{toastBaseUrl}}{{foodTrucks}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{foodTrucks}}{id}",
+							"host": [
+								"{{toastBaseUrl}}{{foodTrucks}}{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{foodTrucks}}{{new}}",
+							"host": [
+								"{{toastBaseUrl}}{{foodTrucks}}{{new}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{toastBaseUrl}}{{foodTrucks}}",
+							"host": [
+								"{{toastBaseUrl}}{{foodTrucks}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{toastBaseUrl}}{{foodTrucks}}",
+							"host": [
+								"{{toastBaseUrl}}{{foodTrucks}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aaae355d-ccaa-4b1b-abe5-e9428d73fe08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "12afb1f1-c4dd-4597-9326-ccd72fc6eb6e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2aac04d9-b518-4e8f-b2fe-fd0e9e9f3926",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "00b55110-dcb9-4125-907f-6a3db98ba5d0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5baafdbc-7356-4d6e-97d7-501c236a4f6a",
+			"key": "portalBaseUrl",
+			"value": "https://localhost:5001/api/",
+			"type": "string"
+		},
+		{
+			"id": "af76ec14-5473-4616-8413-6797cc03ee02",
+			"key": "toastBaseUrl",
+			"value": "https://localhost:5001/api/toast/",
+			"type": "string"
+		},
+		{
+			"id": "f48ae5f4-2c95-47eb-9760-d9a58d794c60",
+			"key": "new",
+			"value": "new",
+			"type": "string"
+		},
+		{
+			"id": "85c199a6-11a6-43a5-973a-e6c6508ca59d",
+			"key": "brandingSponsorships",
+			"value": "brandingsponsorships/",
+			"type": "string"
+		},
+		{
+			"id": "b372f434-8ae2-4aee-a018-c9f1075a718c",
+			"key": "directors",
+			"value": "directors/",
+			"type": "string"
+		},
+		{
+			"id": "1beb05a1-2543-4326-a0d2-e9dbe81cd4cd",
+			"key": "sponsors",
+			"value": "sponsors/",
+			"type": "string"
+		},
+		{
+			"id": "52a0f537-8e8d-4194-910f-7964fa9d1d8f",
+			"key": "sponsorships",
+			"value": "sponsorships/",
+			"type": "string"
+		},
+		{
+			"id": "8e8f2bbc-fc0d-469c-864d-e49ba61aa6c4",
+			"key": "settings",
+			"value": "settings/",
+			"type": "string"
+		},
+		{
+			"id": "08d55661-4699-48cd-a3c8-77b7df9763e5",
+			"key": "contenders",
+			"value": "contenders/",
+			"type": "string"
+		},
+		{
+			"id": "d47565ed-fc9f-4645-befd-3874b584f935",
+			"key": "foodTrucks",
+			"value": "foodtrucks",
+			"type": "string"
+		},
+		{
+			"id": "fae9f8b8-3a32-48fc-b903-e37e3bfb85ab",
+			"key": "liquors",
+			"value": "liquors",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

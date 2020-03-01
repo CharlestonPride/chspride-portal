@@ -8,7 +8,7 @@ namespace CharlestonPride.Portal.Models
     public class BrandingSponsorship : PartitionedEntity
     {
         public const string EnvironmentId = "branding";
-        public bool Available { get; set; } = true;
+        public bool Available { get; set; } = false;
         public List<string> Details { get; set; } = new List<string>();
         public string Event { get; set; }
         public SponsorshipLevel BaseLevel { get; set; } = SponsorshipLevel.Purple;
