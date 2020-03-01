@@ -1,17 +1,11 @@
 using System.ComponentModel.DataAnnotations;
-using Cosmonaut;
 using Cosmonaut.Attributes;
-using Newtonsoft.Json;
 
 namespace CharlestonPride.Portal.Models
 {
   [CosmosCollection("Sponsors")]
-  public class Sponsor : CosmosEntity
+  public class Sponsor : PartitionedEntity
   {
-    [JsonProperty("envId")]
-    [CosmosPartitionKey]
-    public string EnvId { get; set; }
-
     [Required]
     public string Name { get; set; }
 

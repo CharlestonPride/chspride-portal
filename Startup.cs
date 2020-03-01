@@ -1,13 +1,14 @@
+using System.Collections.Generic;
 using CharlestonPride.Portal.Models;
 using Cosmonaut;
 using Cosmonaut.Extensions.Microsoft.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace CharlestonPride.Portal
@@ -36,9 +37,13 @@ namespace CharlestonPride.Portal
       SetupCosmos(services);
 
       services.AddMvc()
-    .AddNewtonsoftJson(options =>
-           options.SerializerSettings.ContractResolver =
-              new CamelCasePropertyNamesContractResolver());
+        .AddNewtonsoftJson(options =>
+        {
+          options.SerializerSettings.ContractResolver =
+            new CamelCasePropertyNamesContractResolver();
+          options.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+          options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+        });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,12 +88,22 @@ namespace CharlestonPride.Portal
       var databaseName = Configuration.GetValue<string>("CosmosDb:DatabaseName");
       var endpointUrl = Configuration.GetValue<string>("CosmosDb:Account");
       var authKey = Configuration.GetValue<string>("CosmosDb:AuthKey");
-      var settings = new CosmosStoreSettings(databaseName, endpointUrl, authKey);
+      var settings = new CosmosStoreSettings(databaseName, endpointUrl, authKey)
+      {
+        JsonSerializerSettings = new JsonSerializerSettings()
+        {
+          ContractResolver = new CamelCasePropertyNamesContractResolver(),
+          Converters =  new List<JsonConverter>{new Newtonsoft.Json.Converters.StringEnumConverter()},
+          NullValueHandling = NullValueHandling.Ignore
+        }
+      };
 
-      //Register stores here
+      //Register stores herea
       services.AddCosmosStore<Director>(settings);
       services.AddCosmosStore<Sponsor>(settings);
       services.AddCosmosStore<BrandingSponsorship>(settings);
+      services.AddCosmosStore<Sponsorship>(settings);
+      services.AddCosmosStore<Setting>(settings);
     }
   }
 }

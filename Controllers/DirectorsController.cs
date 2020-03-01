@@ -10,7 +10,7 @@ namespace CharlestonPride.Portal.Controllers
   
   public class DirectorsController : CosmosEntityBaseController<Director> {
     public DirectorsController(ILogger<Director> logger, ICosmosStore<Director> cosmosStore) 
-      : base(logger, cosmosStore, Director.EnvironmentId) { }
+      : base(logger, cosmosStore) { }
 
     public override async Task<IEnumerable<Director>> GetAsync()
     {

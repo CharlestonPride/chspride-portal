@@ -1,14 +1,10 @@
-using Cosmonaut;
 using Cosmonaut.Attributes;
-using Newtonsoft.Json;
 
 namespace CharlestonPride.Portal.Models
 {
     [CosmosCollection("Settings")]
-    public class Setting : CosmosEntity
+    public class Setting : PartitionedEntity
     {
-        [JsonProperty("envId")]
-        [CosmosPartitionKey]
-        public string EnvId { get; set; }
+        public bool Enabled { get; set; }
     }
 }

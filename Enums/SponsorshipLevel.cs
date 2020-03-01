@@ -1,6 +1,6 @@
 namespace CharlestonPride.Portal.Enums
 {
-    public enum SponsorshipLevels
+    public enum SponsorshipLevel
     {
         Red,
         Orange,

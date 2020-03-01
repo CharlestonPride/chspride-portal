@@ -15,13 +15,14 @@ namespace CharlestonPride.Portal.Controllers
     [Route("api/[controller]")]
     public class CosmosEntityBaseController<T>: ControllerBase where  T : CosmosEntity
     {
+        private const string DefaultEnvironment = "chspride";
         private readonly string _environmentId;
         private readonly ILogger<T> _logger;
         private readonly ICosmosStore<T> _cosmosStore;
         private readonly FeedOptions _feedOptions;
         private readonly RequestOptions _requestOptions;
 
-        public CosmosEntityBaseController(ILogger<T> logger, ICosmosStore<T> cosmosStore, string environmentId)
+        public CosmosEntityBaseController(ILogger<T> logger, ICosmosStore<T> cosmosStore, string environmentId = DefaultEnvironment)
         {
             _logger = logger;
             _cosmosStore = cosmosStore;
