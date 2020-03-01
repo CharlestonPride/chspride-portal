@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using CharlestonPride.Portal.Models;
+using CharlestonPride.Portal.Models.Toast;
 using Cosmonaut;
 using Cosmonaut.Extensions.Microsoft.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sponsor = CharlestonPride.Portal.Models.Sponsor;
+using Sponsorship = CharlestonPride.Portal.Models.Sponsorship;
+using ToastSponsor = CharlestonPride.Portal.Models.Toast.Sponsor;
+using ToastSponsorship = CharlestonPride.Portal.Models.Toast.Sponsorship;
+using ToastAdvertisement = CharlestonPride.Portal.Models.Toast.Advertisement;
 
 namespace CharlestonPride.Portal
 {
@@ -98,12 +104,20 @@ namespace CharlestonPride.Portal
         }
       };
 
-      //Register stores herea
+      //Register stores here
       services.AddCosmosStore<Director>(settings);
       services.AddCosmosStore<Sponsor>(settings);
       services.AddCosmosStore<BrandingSponsorship>(settings);
       services.AddCosmosStore<Sponsorship>(settings);
       services.AddCosmosStore<Setting>(settings);
+      services.AddCosmosStore<Advertisement>(settings);
+      services.AddCosmosStore<Contender>(settings);
+      services.AddCosmosStore<FoodTruck>(settings);
+      services.AddCosmosStore<Liquor>(settings);
+      services.AddCosmosStore<ToastAdvertisement>(settings);
+      services.AddCosmosStore<ToastSponsor>(settings);
+      services.AddCosmosStore<ToastSponsorship>(settings);
+
     }
   }
 }
