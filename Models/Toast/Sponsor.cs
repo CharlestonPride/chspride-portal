@@ -8,7 +8,7 @@ namespace CharlestonPride.Portal.Models.Toast
         public const string EnvironmentId = "tte";
 
         public string Name { get; set; }
-        public Social Social { get; set; }
+        public Social Social { get; set; } = new Social();
         public string Level { get; set; }
     }
 }

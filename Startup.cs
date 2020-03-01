@@ -48,7 +48,6 @@ namespace CharlestonPride.Portal
           options.SerializerSettings.ContractResolver =
             new CamelCasePropertyNamesContractResolver();
           options.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-          options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
         });
     }
 

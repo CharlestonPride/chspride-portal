@@ -13,7 +13,7 @@ namespace CharlestonPride.Portal.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CosmosEntityBaseController<T>: ControllerBase where  T : CosmosEntity
+    public class CosmosEntityBaseController<T>: ControllerBase where  T : CosmosEntity, new()
     {
         private const string DefaultEnvironment = "chspride";
         private readonly string _environmentId;
@@ -45,6 +45,11 @@ namespace CharlestonPride.Portal.Controllers
             if (string.IsNullOrEmpty(id))
             {
                 return BadRequest();
+            }
+
+            if (id == "0" || id == "new")
+            {
+                return new OkObjectResult(new T());
             }
 
             var result = await _cosmosStore.FindAsync(id, _environmentId);
