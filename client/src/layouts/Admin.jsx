@@ -15,7 +15,9 @@ class Admin extends React.Component {
   }
   getRoutes = routes => {
     return routes.map((prop, key) => {
-      return <Route path={prop.path} component={prop.component} key={key} />;
+      return (
+        <Route path={prop.path} exact component={prop.component} key={key} />
+      );
     });
   };
   getBrandText = path => {
@@ -33,7 +35,7 @@ class Admin extends React.Component {
           {...this.props}
           routes={routes}
           logo={{
-            innerLink: "/index",
+            innerLink: "/",
             imgSrc: require("assets/img/brand/logo.png"),
             imgAlt: "Charleston Pride"
           }}

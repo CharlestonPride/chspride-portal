@@ -87,3 +87,26 @@ export const TextAreaInput = ({ label, ...props }) => {
     </>
   );
 };
+
+export const DateInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <>
+      <FormGroup>
+        <Label for={props.id || props.name}>{label}</Label>
+        <Input
+          {...field}
+          {...props}
+          type="date"
+          className={classNames({
+            "is-invalid": meta.touched && meta.error
+          })}
+        />
+        {meta.touched && meta.error ? (
+          <div className="invalid-feedback">{meta.error}</div>
+        ) : null}
+      </FormGroup>
+    </>
+  );
+};

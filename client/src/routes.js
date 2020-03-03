@@ -6,21 +6,31 @@ import Icons from "views/examples/Icons.jsx";
 import Weather from "views/examples/Weather.jsx";
 import ListToastSponsor from "views/toast/sponsors/List";
 import EditToastSponsor from "views/toast/sponsors/Edit";
+import ListBoard from "views/board/List";
+import EditBoardMember from "views/board/Edit";
 
 var routes = [
   {
-    path: "/index",
+    path: "/",
     name: "Dashboard",
     icon: "chart-bar",
     color: "green",
     component: Index
   },
   {
-    path: "/icons",
+    path: "/board/new",
+    component: EditBoardMember
+  },
+  {
+    path: "/board/edit/:id",
+    component: EditBoardMember
+  },
+  {
+    path: "/board",
     name: "Board of Directors",
     icon: "users",
     color: "blue",
-    component: Icons
+    component: ListBoard
   },
   {
     path: "/maps",
