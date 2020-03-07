@@ -10,6 +10,6 @@ namespace CharlestonPride.Portal.Controllers.Toast
         : CosmosEntityBaseController<FoodTruck>
     {
         public FoodTrucksController(ILogger<FoodTruck> logger, ICosmosStore<FoodTruck> cosmosStore)
-            : base(logger, cosmosStore) {}
+            : base(logger, cosmosStore, FoodTruck.EnvironmentId) {}
     }
 }

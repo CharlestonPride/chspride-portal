@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CharlestonPride.Portal.Models;
 using Cosmonaut;
 using Cosmonaut.Extensions;
 using Microsoft.AspNetCore.Http;
@@ -13,7 +14,7 @@ namespace CharlestonPride.Portal.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CosmosEntityBaseController<T>: ControllerBase where  T : CosmosEntity, new()
+    public class CosmosEntityBaseController<T>: ControllerBase where  T : PartitionedEntity, new()
     {
         private const string DefaultEnvironment = "chspride";
         private readonly string _environmentId;
@@ -90,6 +91,7 @@ namespace CharlestonPride.Portal.Controllers
         }
         protected async Task<ActionResult<T>> UpsertAsync(T entity)
         {
+            entity.EnvId = _environmentId;
             var cosmosResponse =  await _cosmosStore.UpsertAsync(entity, _requestOptions);
             if (cosmosResponse.IsSuccess)
             {

@@ -10,6 +10,6 @@ namespace CharlestonPride.Portal.Controllers.Toast
         : CosmosEntityBaseController<Advertisement>
     {
         public AdvertisementController(ILogger<Advertisement> logger, ICosmosStore<Advertisement> cosmosStore)
-            : base(logger, cosmosStore) {}
+            : base(logger, cosmosStore, Advertisement.EnvironmentId) {}
     }
 }
