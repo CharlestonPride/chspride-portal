@@ -8,6 +8,7 @@ import ListToastSponsor from "views/toast/sponsors/List";
 import EditToastSponsor from "views/toast/sponsors/Edit";
 import ListBoard from "views/board/List";
 import EditBoardMember from "views/board/Edit";
+import EditSponsor from "views/sponsors/Edit";
 
 var routes = [
   {
@@ -61,7 +62,11 @@ var routes = [
     component: Weather
   },
   {
-    path: "/toast/sponsors/edit",
+    path: "/sponsors/edit",
+    component: EditSponsor
+  },
+  {
+    path: "/toast/sponsors/edit/:id",
     component: EditToastSponsor
   },
   {
