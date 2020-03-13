@@ -1,112 +1,184 @@
 import React from "react";
-import { FormGroup, Input, Label } from "reactstrap";
-import { useField } from "formik";
+import {
+  FormGroup,
+  Input,
+  Label,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 var classNames = require("classnames");
 
-export const TextInput = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
-
+export const TextInput = ({ label, name, placeholder, innerRef, errors }) => {
   return (
-    <>
-      <FormGroup>
-        <Label for={props.id || props.name}>{label}</Label>
-        <Input
-          {...field}
-          {...props}
-          className={classNames({
-            "is-invalid": meta.touched && meta.error
-          })}
-        />
-        {meta.touched && meta.error ? (
-          <div className="invalid-feedback">{meta.error}</div>
-        ) : null}
-      </FormGroup>
-    </>
+    <FormGroup>
+      <Label for="name">{label}</Label>
+      <Input
+        name={name}
+        innerRef={innerRef}
+        placeholder={placeholder}
+        className={classNames({
+          "is-invalid": errors[name]
+        })}
+      />
+      {errors[name] && errors[name].type === "required" && (
+        <small className="text-warning">{label + " is required"}</small>
+      )}
+    </FormGroup>
   );
 };
 
-export const CheckboxInput = ({ children, ...props }) => {
-  const [field, meta] = useField({ ...props, type: "checkbox" });
+export const SocialInput = ({ type, name, placeholder, innerRef, errors }) => {
+  let label;
+  let icon;
+  if (type === "facebook") {
+    label = "Facebook";
+    icon = faFacebook;
+  } else if (type === "instagram") {
+    label = "Instagram";
+    icon = faInstagram;
+  } else if (type === "twitter") {
+    label = "Twitter";
+    icon = faTwitter;
+  } else {
+    label = "Website";
+    icon = faGlobe;
+  }
   return (
-    <>
-      <FormGroup check>
-        <Label check>
-          <Input {...field} {...props} type="checkbox" />
-          {children}
-        </Label>
-      </FormGroup>
-      {meta.touched && meta.error ? (
-        <div className="invalid-feedback">{meta.error}</div>
-      ) : null}
-    </>
+    <FormGroup>
+      <InputGroup>
+        <InputGroupAddon addonType="prepend">
+          <InputGroupText>
+            <FontAwesomeIcon icon={icon} />
+          </InputGroupText>
+        </InputGroupAddon>
+        <Input
+          name={name}
+          innerRef={innerRef}
+          placeholder={placeholder}
+          className={classNames({
+            "is-invalid": errors[name]
+          })}
+        />
+      </InputGroup>
+
+      {errors[name] && errors[name].type === "required" && (
+        <small className="text-warning">{label + " is required"}</small>
+      )}
+    </FormGroup>
   );
 };
 
-export const SelectInput = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
-
+export const CheckboxInput = ({ label, name, innerRef }) => {
   return (
-    <>
-      <FormGroup>
-        <Label htmlFor={props.id || props.name}>{label}</Label>
-        <Input
-          type="select"
-          {...field}
-          {...props}
-          className={classNames({
-            "is-invalid": meta.touched && meta.error
-          })}
-        />
-        {meta.touched && meta.error ? (
-          <div className="invalid-feedback">{meta.error}</div>
-        ) : null}
-      </FormGroup>
-    </>
+    <FormGroup check className="custom-control custom-checkbox mb-3">
+      <Input
+        type="checkbox"
+        name={name}
+        id={name}
+        innerRef={innerRef}
+        className="custom-control-input"
+      />
+      <Label for={name} check className="custom-control-label">
+        {label}
+      </Label>
+    </FormGroup>
   );
 };
 
-export const TextAreaInput = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
-
+export const SelectInput = ({ label, name, innerRef, errors, ...props }) => {
   return (
-    <>
-      <FormGroup>
-        <Label for={props.id || props.name}>{label}</Label>
-        <Input
-          {...field}
-          {...props}
-          type="textarea"
-          className={classNames({
-            "is-invalid": meta.touched && meta.error
-          })}
-        />
-        {meta.touched && meta.error ? (
-          <div className="invalid-feedback">{meta.error}</div>
-        ) : null}
-      </FormGroup>
-    </>
+    <FormGroup>
+      <Label htmlFor={name}>{label}</Label>
+      <Input
+        type="select"
+        name={name}
+        id={name}
+        innerRef={innerRef}
+        className={classNames({
+          "is-invalid": errors[name]
+        })}
+      >
+        {props.children}
+      </Input>
+      {errors[name] && errors[name].type === "required" && (
+        <small className="text-warning">{label + " is required"}</small>
+      )}
+    </FormGroup>
   );
 };
 
-export const DateInput = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
-
+export const TextAreaInput = ({
+  label,
+  name,
+  placeholder,
+  innerRef,
+  errors
+}) => {
   return (
-    <>
-      <FormGroup>
-        <Label for={props.id || props.name}>{label}</Label>
-        <Input
-          {...field}
-          {...props}
-          type="date"
-          className={classNames({
-            "is-invalid": meta.touched && meta.error
-          })}
-        />
-        {meta.touched && meta.error ? (
-          <div className="invalid-feedback">{meta.error}</div>
-        ) : null}
-      </FormGroup>
-    </>
+    <FormGroup>
+      <Label for="name">{label}</Label>
+      <Input
+        name={name}
+        innerRef={innerRef}
+        placeholder={placeholder}
+        type="textarea"
+        className={classNames({
+          "is-invalid": errors[name]
+        })}
+      />
+      {errors[name] && errors[name].type === "required" && (
+        <small className="text-warning">{label + " is required"}</small>
+      )}
+    </FormGroup>
+  );
+};
+
+export const RadioButtonGroupInput = ({ label, errors, name, ...props }) => {
+  return (
+    <div className="mb-3">
+      <Label>{label}</Label>
+      {props.children}
+      {errors[name] && errors[name].type === "required" && (
+        <small className="text-warning">{label + " is required"}</small>
+      )}
+    </div>
+  );
+};
+
+export const RadioButtonInput = ({ label, name, innerRef, value }) => {
+  return (
+    <FormGroup check>
+      <Label check>
+        <Input type="radio" name={name} innerRef={innerRef} value={value} />{" "}
+        {label}
+      </Label>
+    </FormGroup>
+  );
+};
+
+export const DatePickerInput = ({ label, name, innerRef, errors }) => {
+  return (
+    <FormGroup>
+      <Label for="name">{label}</Label>
+      <InputGroup className="input-group">
+        <InputGroupAddon addonType="prepend">
+          <InputGroupText>
+            <FontAwesomeIcon icon="calendar-alt" />
+          </InputGroupText>
+        </InputGroupAddon>
+        <Input type="date" name={name} innerRef={innerRef} />
+      </InputGroup>
+      {errors[name] && errors[name].type === "required" && (
+        <small className="text-warning">{label + " is required"}</small>
+      )}
+    </FormGroup>
   );
 };

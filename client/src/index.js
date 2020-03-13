@@ -19,7 +19,8 @@ import {
   faStore,
   faCogs,
   faTrophy,
-  faCocktail
+  faCocktail,
+  faCalendarAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 import "assets/vendor/nucleo/css/nucleo.css";
@@ -44,7 +45,8 @@ library.add(
   faStore,
   faCogs,
   faTrophy,
-  faCocktail
+  faCocktail,
+  faCalendarAlt
 );
 
 ReactDOM.render(
