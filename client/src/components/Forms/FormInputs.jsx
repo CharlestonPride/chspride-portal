@@ -164,6 +164,18 @@ export const RadioButtonInput = ({ label, name, innerRef, value }) => {
   );
 };
 
+export const ToggleButtonInput = ({ label, name, innerRef, value }) => {
+  return (
+    <FormGroup className="d-flex">
+      <Label className="custom-toggle">
+        <Input type="checkbox" name={name} innerRef={innerRef} value={value} />
+        <span className="custom-toggle-slider rounded-circle" />
+      </Label>
+      <span className="ml-2">{label}</span>
+    </FormGroup>
+  );
+};
+
 export const DatePickerInput = ({ label, name, innerRef, errors }) => {
   return (
     <FormGroup>
