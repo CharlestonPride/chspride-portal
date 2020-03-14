@@ -155,12 +155,19 @@ export const RadioButtonGroupInput = ({ label, errors, name, ...props }) => {
 
 export const RadioButtonInput = ({ label, name, innerRef, value }) => {
   return (
-    <FormGroup check>
-      <Label check>
-        <Input type="radio" name={name} innerRef={innerRef} value={value} />{" "}
+    <div className="custom-control custom-radio">
+      <Input
+        type="radio"
+        name={name}
+        innerRef={innerRef}
+        value={value}
+        className="custom-control-input"
+        id={name + "-" + value}
+      />
+      <Label className="custom-control-label" htmlFor={name + "-" + value}>
         {label}
       </Label>
-    </FormGroup>
+    </div>
   );
 };
 
